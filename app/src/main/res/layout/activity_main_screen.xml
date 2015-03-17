@@ -1,33 +1,78 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="#00A0E9"
-    tools:context=".MainScreen">
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainScreen"
+        android:background="#00A0E9">
 
     <TextView android:text="ASL POCKET DICTIONARY" android:layout_width="wrap_content"
         android:textColor="#ffff"
         android:textStyle="bold"
-        android:textSize="28sp"
+        android:textSize="29sp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
     <Button
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:text="     Search By Category"
-        android:textStyle="bold"
-        android:textSize="20sp"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
         android:background="@drawable/handpic"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp" />
+        android:text="Search By Category"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button4"
+        android:layout_alignEnd="@+id/button4" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="190dp"
+        android:background="@drawable/handpic"
+        android:text="Search By Word"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button1"
+        android:layout_toEndOf="@+id/button1" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="190dp"
+        android:background="@drawable/handpic"
+        android:text="Training Game"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/button3"
+        android:layout_alignTop="@+id/button4"
+        android:layout_toRightOf="@+id/button4"
+        android:layout_toEndOf="@+id/button4" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="190dp"
+        android:background="@drawable/handpic"
+        android:text="Learn ASL"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/button4"
+        android:layout_below="@+id/searchView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"
+        android:layout_alignTop="@+id/searchView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
 
 </RelativeLayout>
