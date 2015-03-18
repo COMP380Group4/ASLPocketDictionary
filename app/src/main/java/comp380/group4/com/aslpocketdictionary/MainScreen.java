@@ -19,8 +19,9 @@ public class MainScreen extends ActionBarActivity {
 
     /** Called when the user clicks the Search By Word */
     public void searchWord(View view) {
+        setContentView(R.layout.activity_search_by_word);
         // Do something in response to button
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        Intent intent = new Intent(this, SearchByWord.class);
 
     }
 

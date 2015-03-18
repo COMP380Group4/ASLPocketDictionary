@@ -6,65 +6,75 @@
         android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainScreen"
         android:background="#00A0E9">
 
-    <TextView android:text="ASL POCKET DICTIONARY" android:layout_width="wrap_content"
+    <TextView android:text="American Sign Language:" android:layout_width="wrap_content"
         android:textColor="#ffff"
         android:textStyle="bold"
-        android:textSize="29sp"
+        android:textSize="24sp"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toLeftOf="@+id/searchView"
+        android:layout_toStartOf="@+id/searchView" />
+
+    <TextView android:text="Pocket Dictionary" android:layout_width="wrap_content"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
 
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="190dp"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
         android:background="@drawable/handpic"
         android:text="Search By Category"
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/button1"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/button4"
-        android:layout_alignEnd="@+id/button4" />
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3" />
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="190dp"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
         android:background="@drawable/handpic"
         android:text="Search By Word"
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/button2"
+        android:onClick="searchWord"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button1"
-        android:layout_toEndOf="@+id/button1"
-        android:onClick="searchWord"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="190dp"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
         android:background="@drawable/handpic"
         android:text="Training Game"
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/button3"
-        android:layout_alignTop="@+id/button4"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_toEndOf="@+id/button4" />
+        android:layout_below="@+id/searchView"
+        android:layout_alignRight="@+id/searchView"
+        android:layout_alignEnd="@+id/searchView" />
 
     <Button
-        android:layout_width="180dp"
-        android:layout_height="190dp"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
         android:background="@drawable/handpic"
         android:text="Learn ASL"
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/button4"
         android:layout_below="@+id/searchView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <SearchView
@@ -72,8 +82,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/searchView"
         android:layout_alignTop="@+id/searchView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
