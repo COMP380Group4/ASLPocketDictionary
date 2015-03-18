@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class SearchByWord extends ActionBarActivity {
@@ -15,6 +16,14 @@ public class SearchByWord extends ActionBarActivity {
         setContentView(R.layout.activity_search_by_word);
         Intent intent = getIntent();
     }
+
+    /** Called when the user clicks the back button */
+    public void goHome(View view) {
+        setContentView(R.layout.activity_main_screen);
+
+    }
+
+
 
 
     @Override
