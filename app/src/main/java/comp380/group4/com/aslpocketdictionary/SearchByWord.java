@@ -13,6 +13,7 @@ public class SearchByWord extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_search_by_word);
         Intent intent = getIntent();
     }
