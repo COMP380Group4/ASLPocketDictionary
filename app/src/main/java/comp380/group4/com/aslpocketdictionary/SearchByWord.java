@@ -20,6 +20,7 @@ public class SearchByWord extends ActionBarActivity {
     /** Called when the user clicks the back button */
     public void goHome(View view) {
         setContentView(R.layout.activity_main_screen);
+        Intent intent = new Intent(this, MainScreen.class);
 
     }
 
