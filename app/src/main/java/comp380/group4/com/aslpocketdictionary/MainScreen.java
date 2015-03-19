@@ -1,6 +1,7 @@
 package comp380.group4.com.aslpocketdictionary;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +18,14 @@ public class MainScreen extends ActionBarActivity {
         setContentView(R.layout.activity_main_screen);
     }
 
-    /** Called when the user clicks the Search By Word */
+    public void goHome(View view) {
+        setContentView(R.layout.activity_main_screen);
+        Intent intent = new Intent(this, MainScreen.class);
+
+    }
+    /**
+     * Called when the user clicks the Search By Word
+     */
     public void searchWord(View view) {
         setContentView(R.layout.activity_search_by_word);
         // Do something in response to button
@@ -46,7 +54,7 @@ public class MainScreen extends ActionBarActivity {
         }
 
 
-
         return super.onOptionsItemSelected(item);
     }
+
 }
