@@ -24,8 +24,16 @@ public class MainScreen extends ActionBarActivity {
         Intent intent = new Intent(this, MainScreen.class);
 
     }
+
+    //called when the user clicks the Search by Category button
+    public void searchCategory(View view) {
+        setContentView(R.layout.activity_search_by_category);
+        //Do something in response to button
+        Intent intent = new Intent(this, SearchByCategory.class);
+    }
+
     /**
-     * Called when the user clicks the Search By Word
+     * Called when the user clicks the Search By Word button
      */
     public void searchWord(View view) {
         setContentView(R.layout.activity_search_by_word);
@@ -33,7 +41,19 @@ public class MainScreen extends ActionBarActivity {
         Intent intent = new Intent(this, SearchByWord.class);
 
     }
+    //called when the user clicks the Training Game button
+    public void trainingGame(View view) {
+        setContentView(R.layout.activity_training_game);
+        //Do something in response to button
+        Intent intent = new Intent(this, TrainingGame.class);
+    }
 
+    //called when the user clicks the Learn More button
+    public void learnMore(View view) {
+        setContentView(R.layout.activity_learn_more_asl);
+        //Do something in response to button
+        Intent intent = new Intent(this, LearnMoreASL.class);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
