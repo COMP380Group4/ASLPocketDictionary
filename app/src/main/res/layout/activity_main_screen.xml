@@ -9,12 +9,12 @@
     <TextView android:text="American Sign Language:" android:layout_width="wrap_content"
         android:textColor="#ffff"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/searchView"
-        android:layout_toStartOf="@+id/searchView" />
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <TextView android:text="Pocket Dictionary" android:layout_width="wrap_content"
         android:textColor="#ffff"
@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
         android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:layout_centerHorizontal="true" />
 
 
     <Button
@@ -34,26 +33,26 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:id="@+id/button1"
-        android:layout_below="@+id/searchView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@drawable/csign"
         android:textColor="#ffffab27"
-        android:onClick="searchCategory" />
+        android:onClick="searchCategory"
+        android:layout_above="@+id/button3"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="160dp"
-        android:layout_height="180dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:drawable/ic_menu_search"
         android:text="Search By Word"
-        android:textSize="25sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:id="@+id/button2"
         android:onClick="searchWord"
-        android:layout_below="@+id/searchView"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/wsign"
-        android:textColor="#ffffab27" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="160dp"
@@ -82,15 +81,6 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/lsign"
         android:textColor="#ffffab27" />
-
-
-    <SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView"
-        android:layout_alignTop="@+id/searchView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
