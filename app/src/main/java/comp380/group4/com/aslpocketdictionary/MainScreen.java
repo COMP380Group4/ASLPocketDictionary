@@ -27,32 +27,28 @@ public class MainScreen extends ActionBarActivity {
 
     //called when the user clicks the Search by Category button
     public void searchCategory(View view) {
-        setContentView(R.layout.activity_search_by_category);
-        //Do something in response to button
-        Intent intent = new Intent(this, SearchByCategory.class);
+        Intent SBCList=new Intent(getApplicationContext(),SearchByCategory.class);
+        startActivity(SBCList);
     }
 
     /**
      * Called when the user clicks the Search By Word button
      */
     public void searchWord(View view) {
-        setContentView(R.layout.activity_search_by_word);
-        // Do something in response to button
-        Intent intent = new Intent(this, SearchByWord.class);
+        Intent SBWList=new Intent(getApplicationContext(),SearchByWord.class);
+        startActivity(SBWList);
 
     }
     //called when the user clicks the Training Game button
     public void trainingGame(View view) {
-        setContentView(R.layout.activity_training_game);
-        //Do something in response to button
-        Intent intent = new Intent(this, TrainingGame.class);
+        Intent TGList=new Intent(getApplicationContext(),TrainingGame.class);
+        startActivity(TGList);
     }
 
     //called when the user clicks the Learn More button
     public void learnMore(View view) {
-        setContentView(R.layout.activity_learn_more_asl);
-        //Do something in response to button
-        Intent intent = new Intent(this, LearnMoreASL.class);
+        Intent LMList=new Intent(getApplicationContext(), LearnMoreASL.class);
+        startActivity(LMList);
     }
 
     @Override

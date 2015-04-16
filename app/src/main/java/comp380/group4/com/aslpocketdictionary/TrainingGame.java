@@ -13,13 +13,8 @@ public class TrainingGame extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_training_game);
-    }
-
-    //called when user clicks the back button
-    public void goHome (View view) {
-        setContentView(R.layout.activity_main_screen);
-        Intent intent = new Intent(this, MainScreen.class);
     }
 
     @Override
