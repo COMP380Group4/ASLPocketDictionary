@@ -7,6 +7,10 @@
     <string name="title_activity_search_by_word">SearchByWord</string>
     <string name="title_activity_learn_more_asl">LearnMoreASL</string>
     <string name="title_activity_training_game">TrainingGame</string>
+    <string name="menu_settings" />
+    <string name="title_activity_result" />
+    <string name="str_next">Next</string>
     <string name="title_activity_search_by_category">SearchByCategory</string>
+
 
 </resources>
