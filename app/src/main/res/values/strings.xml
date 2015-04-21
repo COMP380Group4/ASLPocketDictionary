@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">ASL Pocket Dictionary</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_search_by_word">SearchByWord</string>
     <string name="title_activity_learn_more_asl">LearnMoreASL</string>
@@ -12,5 +11,158 @@
     <string name="str_next">Next</string>
     <string name="title_activity_search_by_category">SearchByCategory</string>
 
+    <string-array name="fun_facts">
+        <item> "Although Britain and the US share a spoken language, their sign languages have grown
+            up separately. American Sign Language (ASL), also used in much of Canada, is heavily
+            influenced by French Sign Language. British Sign Language (BSL) is similar to Australian
+            Sign Language (AusLan)."</item>
+        <item> "In ASL, finger-spelling requires only one hand. In British Sign Language (BSL),
+            letters are formed using both hands (with the exception of ‘C’). Both systems have
+            advantages, BSL letters being easier to learn as they are more systematic and many
+            resemble their written counterparts."</item>
+        <item> "Sign languages convey meaning through the positioning and expression of various
+            parts of the body, including facial expressions, lip patterns and upper body and head
+            movement."</item>
+        <item>"Sign languages can convey ideas on any subject. Poetry is written in sign languages,
+            and jokes are told all the time! Despite their complexity, they can be easier to learn
+            than spoken languages, as signs often bear a closer resemblance to the ideas they
+            signify than words can."</item>
+        <item>"The grammar of British Sign Language (BSL) and also of ASL are very different to
+            those of spoken English. Word (sign) order is altered, some words such as ‘the’ are not
+            used, and others such as orange (the fruit) and orange (the color) have distinct signs.
+            Signed English is a system which applies ASL or BSL signs to the grammar of spoken
+            English."</item>
+        <item>"Pidgin Signed English (PSE) is basically ASL signed in English order. Many deaf
+            children, who sign, with hearing parents use PSE because ASL word order is different
+            from English word order. "</item>
+        <item>"Gallaudet University was the first college for the deaf in America and was named
+            after Thomas Hopkins Gallaudet. It is a private and very expensive college which hearing
+            people can attend BUT deaf persons get first ‘pick.’"</item>
+        <item>"Other than the US, ASL is used often in Canada as well. Canada does not have an
+            official sign language of its own, although there is a specific “Quebec Sign Language”
+            which is more or less confined in its use to Quebec itself. Many Deaf Canadians use ASL."</item>
+        <item>"Hearing-Impaired people may not like to call themselves ‘deaf’, and would often like
+            to recover their hearing, but the term ‘Deaf’ (with a capital ‘D’) is applied to people
+            who are proud of their culture and languages. They may well have been deaf since birth
+            and gone to a school for deaf children. Some people would include groups such as hearing
+            children of deaf parents under the term Deaf."</item>
+        <item>"Sign languages can and are learnt by people of all ages, including pre-school
+            children. If someone has a physical disability which makes it difficult for them to sign
+            conventionally, it is usually easy for them to adapt the language as necessary. Sign
+            languages can be adapted in many ways and are even being used by deaf-blind people in
+            addition to the deal-blind manual, a system of letters traced on a hand."</item>
+        <item>"For purpose of conversing using sign language, deaf people have a ‘sign name.”"</item>
+        <item>"The National Association of Deaf (NAD) is the nation’s premier civil rights
+            organization of, by and for deaf and hard of hearing individuals in the US. Established
+            in 1880, NAD was founded in Cincinnati, OH. Currently, NAD is located at Silver Spring,
+            MD."</item>
+        <item>"Different countries have different sign languages. Sign languages, like spoken
+            languages, developed naturally out of groups of people interacting with each other."</item>
+        <item>"Given a few generations, improvised gestures can evolve into a full language in sign
+            language. "</item>
+        <item>"Sign languages does not represent spoken language. Because sign languages develop
+            within deaf communities, they can be independent of the surrounding spoken language. ASL
+            is quite different from British Sign Language (BSL), despite the fact that English is
+            the spoken language of both countries."</item>
+        <item>"Sign languages have their own grammar. There are rules for well-formed sentences in
+            sign languages. For example, sign languages uses the space in front of the signer to
+            show who did what to whom by pointing. Another rule is that a well-formed question must
+            have the right kind of eyebrow position. Eyebrows should be down for a
+            who-what-where-when-why question, and up for a yes/no question. If you use the rules
+            wrong, or inconsistently, you will have a “foreign” accent!"</item>
+        <item>"Children acquire sign language in the same way they acquire spoken language. The
+            stages of sign language acquisition are the same as those for spoken language."</item>
+        <item>"Brain damage affects sign language in the same way it affects spoken language. When
+            fluent signers have a stroke or brain injury, they may lose the ability to sign, but not
+            to make imitative or non-sign gestures. They may be able to produce signs, but not put
+            them in the correct grammatical configurations. They may be able to produce sentences,
+            but with the signs formed incorrectly, creating a strange accent. They may be able to
+            sign quickly and easily, but without making any sense."</item>
+        <item>"Sign language is a visual language. Sign language is just like spoken language in
+            many ways, but it’s also different. Sign can be very straightforward and formal, but it
+            can also take full advantage of its visual nature for expressive or artistic effect. "</item>
+        <item>"Those who were born completely deaf and only learnt sign language will think in sign
+            language. However, those who were born completely deaf but learn to speak through vocal
+            training will occasionally think not only in the particular sign language that they
+            know, but also will sometimes think in the vocal language they learned, with their
+            brains coming up with how the vocal languages sounds."</item>
+        <item>"ASL resembles Chinese in form more than it does English in terms of a single gesture
+            often represent a phrase or whole idea, rather than a single word. "</item>
+        <item>"Our brains treat sign language exactly as it treats spoken language, even using the
+            exact same part of the brain to process it. It uses the same portion of the left
+            hemisphere to process sign languages as it does for vocal language in the hearing."</item>
+        <item>"If you take a deaf person and make them grip something hard with their hands while
+            asking them to memorize a list of words, this has the same disruptive effect as making a
+            hearing person repeat some nonsense phrase such as “Bob and Bill” during memorization
+            tasks."</item>
+        <item>"While there are many standardized sign languages used, unlike spoken languages, there
+            are also literally thousands of simple sign “languages” used among family units. This is
+            particularly the case with non-deaf parents that have a deaf child. They will often
+            develop numerous home signs and some sort of structured system of using the signs to
+            communicate."</item>
+        <item>"Ever wondered how the deaf wake themselves up in the morning? The most foolproof
+            method, outside of someone just coming to wake you up, is a very strong vibrating
+            accessory attached to a special alarm clock. The attachment asthenia generally placed
+            under the pillow or on the bed near the person. Another common method is an alarm clock
+            that has a bright light attached that points at the sleeper. When the alarm goes off, it
+            flashes brightly on and off. "</item>
+        <item>"Similar to spoken language, sign languages have accents. Typically these manifest
+            themselves in small variations in how one does a gesture or the like. "</item>
+        <item>"Deaf people can typically readily identify those deaf people who began signing later
+            in life by their “late learner” accent."</item>
+        <item>"One of the marks of a “southern” ASL accent is that southern signers sign much slower
+            than northern signers, essentially mimicking the southern drawl in sign."</item>
+        <item>"Along with differing accents, there are numerous dialects, among various deaf
+            communities, that technically use the same sign language."</item>
+        <item>"Deaf people typically clap by striking their hands together only when surrounded by
+            hearing people. Otherwise, they use the more expressive motion of raising their hands
+            and twisting their wrists rapidly to “clap.”"</item>
+        <item>"The earliest record of sign language being used dates all the way back to the fifth
+            century B.C., in Plato’s Cratylus, where Socrates states: “If we hadn’t a voice or a
+            tongue, and wanted to express things to one another, wouldn’t we try to make signs by
+            moving our hands, head, and the rest of our body, just as dumb people do at present?”"</item>
+        <item>"Roughly one person out of every one thousand born is born completely deaf."</item>
+        <item>"It is quite common for deaf people, when they are dreaming, to not only communicate
+            in their dreams using sign language, but also to communicate telepathically and
+            sometimes even verbally even though they may not know how to speak verbally in the
+            waking world."</item>
+        <item>"Research has shown that deaf people are able to learn a sign language, such as ASL,
+            significantly faster than the non-deaf learn spoken language. "</item>
+        <item>"The critical age for learning language is around 21 to 36 months old.  During this
+            period, much of the cognitive infrastructure in a person’s brain is developed and it is
+            thought, much of it is developed as a result of learning language."</item>
+        <item>"Sign Languages are not often written due to the incredibly complexity of trying to
+            replicate the non-sequential nature of signing. The non-sequential nature of sign
+            languages allows for faster and more detailed communication, but has the drawback of
+            being ridiculously hard to put into print, though attempts have been made."</item>
+        <item>"Sign Language is not just an alphabet where you have to sign each letter of the word
+            you are trying to communicate. Sign Language is a complete language with a sign
+            representing the majority of words found in written English. It's rarely required to
+            spell a word because no sign exist."</item>
+        <item>"Babies can communicate physically 6 en dash 8 months prior to communicating verbally."</item>
+        <item>"American Sign Language (ASL) is the third most widely used language in the U.S.,
+            after English and Spanish."</item>
+        <item>"A form of ASL has been used in the U.S. for over two hundred years."</item>
+        <item>"Many people with hearing impairments communicate by using ASL, which combines hand
+            signs, gestures, and facial expressions to create words and sentences. As many as
+            500,000 people in the U.S. communicate using ASL."</item>
+        <item>"Different countries have different sign languages. ASL also has regional and
+            dialectal differences depending on age, gender, culture, and more. There are thousands
+            of different sign languages, approximately 6,000."</item>
+        <item>"Modern-day ASL didn't come from England. It came from France, which is why French
+            Sign Language is similar to American Sign Language. England has its own version of
+            signed language which is very different from ASL, known as Modern British Sign
+            Language."</item>
+        <item>"Sign languages have their own grammar and syntax."</item>
+        <item>"People acquire sign language in the same way they acquire spoken languages."</item>
+        <item>"One sign in sign language can have multiple meanings."</item>
+        <item>"Thomas Edison was a hearing impaired inventor who filed thousands of patents for his
+            inventions."</item>
+        <item>"Beethoven was a famous German composer and pianist who was also hearing impaired."</item>
+        <item>"Alexander Graham Bell, inventor of the telephone, helped advance communication for
+            the hearing impaired."</item>
+        <item>"ASL is considered a foreign language."</item>
+        <item>"Deaf History Month is observed from March 13th to April 15th every year."</item>
+    </string-array>
 
 </resources>

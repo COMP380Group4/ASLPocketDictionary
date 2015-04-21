@@ -6,24 +6,40 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import java.util.Calendar;
 
 
 public class LearnMoreASL extends ActionBarActivity {
+
+    TextView funFacts;
+    String[] fun_facts;
+    int index;
+
+    Calendar calendar = Calendar.getInstance();
+    int dayOfYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_learn_more_asl);
-        Intent intent = getIntent();
-        //display sign of the day
-        //display fun fact
-    }
 
-    //called when user clicks the back button
-    public void goHome (View view) {
-        setContentView(R.layout.activity_main_screen);
-        Intent intent = new Intent(this, MainScreen.class);
+        //initialize dayOfYear
+        dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
+
+        //initialize index
+        index = dayOfYear%fun_facts.length;
+
+        //initialize TextView
+        funFacts = (TextView)findViewById(R.id.funFacts);
+
+        //display sign of the day
+
+        //import the fun facts string array from Values folder
+        fun_facts = getResources().getStringArray(R.array.fun_facts);
+
+        funFacts.setText(fun_facts[index]);
     }
 
     @Override

@@ -18,13 +18,6 @@ public class SearchByWord extends ActionBarActivity {
         Intent intent = getIntent();
     }
 
-    /** Called when the user clicks the back button */
-    public void goHome(View view) {
-        setContentView(R.layout.activity_main_screen);
-        Intent intent = new Intent(this, MainScreen.class);
-
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
