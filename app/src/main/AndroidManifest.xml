@@ -24,7 +24,8 @@
         </activity>
         <activity
             android:name=".LearnMoreASL"
-            android:label="@string/title_activity_learn_more_asl" >
+            android:label="@string/title_activity_learn_more_asl"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="comp380.group4.com.aslpocketdictionary.TrainingGame"
@@ -41,7 +42,8 @@
         </activity>
         <activity
             android:name=".SearchByCategory"
-            android:label="@string/title_activity_search_by_category" >
+            android:label="@string/title_activity_search_by_category"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

@@ -1,42 +1,74 @@
 package comp380.group4.com.aslpocketdictionary;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 
-public class SearchByCategory extends ActionBarActivity {
 
+public class SearchByCategory extends Activity {
+
+    // Array of strings storing country names
+    String[] category = new String[] {
+            "Hello, Good-Bye & other common Greetings in ASL",
+            "Who, What, & other common Questions in ASL",
+            "Colors, Furniture, & other Common Words in ASL",
+            "Months, Days, & other common Calendar Words in ASL"
+    };
+
+    // Array of integers points to images stored in /res/drawable-ldpi/
+    int[] catpic = new int[]{
+            R.drawable.greetings,
+            R.drawable.questions,
+            R.drawable.commonwords,
+            R.drawable.calendar
+
+    };
+
+    // Array of strings to store currencies
+    String[] wordcount = new String[]{
+            "7",
+            "5",
+            "15",
+            "12"
+    };
+
+    /** Called when the activity is first created. */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_search_by_category);
-    }
 
+        // Each row in the list stores country name, currency and flag
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search_by_category, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        for(int i=0;i<4;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", "" + category[i]);
+            hm.put("cur","Word Count : " + wordcount[i]);
+            hm.put("flag", Integer.toString(catpic[i]) );
+            aList.add(hm);
         }
 
-        return super.onOptionsItemSelected(item);
+        // Keys used in Hashmap
+        String[] from = { "flag","txt","cur" };
+
+        // Ids of views in listview_layout
+        int[] to = { R.id.flag,R.id.txt,R.id.cur};
+
+        // Instantiating an adapter to store each items
+        // R.layout.listview_layout defines the layout of each item
+        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.listview_layout, from, to);
+
+        // Getting a reference to listview of main.xml layout file
+        ListView listView = ( ListView ) findViewById(R.id.list_view);
+
+        // Setting the adapter to the listView
+        listView.setAdapter(adapter);
     }
 }
