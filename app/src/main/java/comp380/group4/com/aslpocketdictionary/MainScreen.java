@@ -14,6 +14,7 @@ public class MainScreen extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main_screen);
