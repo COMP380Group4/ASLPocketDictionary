@@ -4,14 +4,19 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class SearchByWord extends Activity {
+public class SearchByWord extends Activity implements AdapterView.OnItemClickListener {
 
     // List view
     private ListView lv;
@@ -32,16 +37,22 @@ public class SearchByWord extends Activity {
         setContentView(R.layout.activity_search_by_word);
 
         // Listview Data
-        String products[] = {"Hello", "Good-Bye", "School", "Class", "Morning",
+
+        Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
+        String products[] = theBigDatabase.wordArray2;
+        /*String products[] = {"Hello", "Good-Bye", "School", "Class", "Morning",
                 "Night", "Thanks",
                 "Why", "Midterm", "Professor", "friend"};
+        /*
 
+         */
         lv = (ListView) findViewById(R.id.list_view);
         inputSearch = (EditText) findViewById(R.id.inputSearch);
 
         // Adding items to listview
-        adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, products);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, products);
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(this);
 
         /**
          * Enabling Search Filter
@@ -65,6 +76,17 @@ public class SearchByWord extends Activity {
             public void afterTextChanged(Editable arg0) {
                 // TODO Auto-generated method stub
             }
+
+
         });
+    }
+
+    //this is not in onCreate this a seperate method
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Backend tbd = new Backend();//run it to create a backend object to use everywhere.
+        //Toast.makeText(this, tbd.pathArray.get(position), Toast.LENGTH_SHORT).show();//displays in a toast the path store in the file
+        Toast.makeText(this, tbd.getSpecificPath(position).toString(), Toast.LENGTH_SHORT).show();//returns the URI then changes it to a STRING to display
+
     }
 }
