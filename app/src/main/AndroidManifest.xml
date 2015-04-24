@@ -45,6 +45,15 @@
             android:label="@string/title_activity_search_by_category"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity
+            android:name=".DisplaySign"
+            android:label="@string/title_activity_search_by_word"
+            android:screenOrientation="portrait">
+        </activity>
+
+
+
     </application>
 
 </manifest>

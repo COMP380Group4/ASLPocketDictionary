@@ -34,13 +34,13 @@ public class Backend {
                 "feelings"};
 
         String[] pathArray2 = {
-                "hello.gif", "goodbye.gif", "home.gif", "work.gif", "school.gif",
-                "store.gif", "church.gif", "day.gif", "night.gif", "week.gif",
-                "month.gif", "year.gif", "mom.gif", "dad.gif", "sibiling.gif",
-                "sibiling.gif", "grandpa.gif", "grandpa.gif", "please.gif", "excuse.gif",
-                "thankyou.gif", "help.gif", "who.gif", "when.gif", "where.gif",
-                "what.gif", "happy.gif", "angry.gif", "sad.gif", "sorry.gif",
-                "cry.gif", "like.gif", "good.gif", "bad.gif", "love.gif"};
+                "hello", "goodbye", "home", "work", "school",
+                "store", "church", "day", "night", "week",
+                "month", "year", "mom", "dad", "sibiling",
+                "sibiling", "grandpa", "grandpa", "please", "excuse",
+                "thankyou", "help", "who", "when", "where",
+                "what", "happy", "angry", "sad", "sorry",
+                "cry", "like", "good", "bad", "love"};
 
 
     //Turn the hardcoded arrays above to ArrayLists in order to use List view and use the

@@ -1,6 +1,7 @@
 package comp380.group4.com.aslpocketdictionary;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -84,9 +85,15 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
     //this is not in onCreate this a seperate method
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Backend tbd = new Backend();//run it to create a backend object to use everywhere.
+        Bundle dataBundle = new Bundle();
+        dataBundle.putInt("Position",position);
+        Intent ds = new Intent(getApplicationContext(),DisplaySign.class);
+        ds.putExtras(dataBundle);
+        startActivity(ds);
+        //Backend tbd = new Backend();//run it to create a backend object to use everywhere.
         //Toast.makeText(this, tbd.pathArray.get(position), Toast.LENGTH_SHORT).show();//displays in a toast the path store in the file
-        Toast.makeText(this, tbd.getSpecificPath(position).toString(), Toast.LENGTH_SHORT).show();//returns the URI then changes it to a STRING to display
+        //Toast.makeText(this, tbd.getSpecificPath(position).toString(), Toast.LENGTH_SHORT).show();//returns the URI then changes it to a STRING to display
 
     }
+
 }
