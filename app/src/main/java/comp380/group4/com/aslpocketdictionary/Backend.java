@@ -74,5 +74,14 @@ public class Backend {
         String myPath = pathArray.get(s);
         return Uri.parse("android.resource://comp380.group4.com.aslpocketdictionary/raw/"+myPath);
     }
+
+    int getAPosition(String s) {
+        int i = 0;
+        String testMe = wordArray2[i];//grabs the string in the array because things were bugging out the more complicated I let it become
+        for(i=0; !s.equals(testMe); i++){//this goe through the entire array looking for a match
+            testMe=wordArray2[i+1];
+        }
+        return i;//returns the match
+    }
 }
 

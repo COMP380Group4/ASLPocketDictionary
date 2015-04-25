@@ -51,7 +51,7 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
         inputSearch = (EditText) findViewById(R.id.inputSearch);
 
         // Adding items to listview
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, products);
+        adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, products);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(this);
 
@@ -85,11 +85,17 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
     //this is not in onCreate this a seperate method
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Bundle dataBundle = new Bundle();
-        dataBundle.putInt("Position",position);
-        Intent ds = new Intent(getApplicationContext(),DisplaySign.class);
-        ds.putExtras(dataBundle);
+        //Bundle dataBundle = new Bundle();
+        String selectedFromList =(lv.getItemAtPosition(position).toString());//this is to grab the string from the list lv
+        Intent ds = new Intent(getApplicationContext(),DisplaySign.class);// this is to create a new intent
+        ds.putExtra("myUniqueId", selectedFromList.toString());// this is to pass the string into the intent
         startActivity(ds);
+        //dataBundle.putInt("Position",position);
+        //dataBundle.putString(selected,selected);
+
+        //ds.putExtra(selected,selected);
+       // ds.putExtras(dataBundle);
+
         //Backend tbd = new Backend();//run it to create a backend object to use everywhere.
         //Toast.makeText(this, tbd.pathArray.get(position), Toast.LENGTH_SHORT).show();//displays in a toast the path store in the file
         //Toast.makeText(this, tbd.getSpecificPath(position).toString(), Toast.LENGTH_SHORT).show();//returns the URI then changes it to a STRING to display

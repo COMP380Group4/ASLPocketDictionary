@@ -19,19 +19,29 @@ public class DisplaySign extends Activity{
     public void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.displaysign);
-        Bundle extras = getIntent().getExtras();
-        int numberData = extras.getInt("Position");
+        //Bundle extras = getIntent().getExtras();
+        //String wordData = extras.getString("selected");
 
-        Toast.makeText(this, ""+ numberData , Toast.LENGTH_SHORT).show();
-        ImageView i;
-        i = (ImageView) findViewById(R.id.mySpecialImage);
+        Intent myNewIntent = getIntent();//creates a new intent
+        String myNewString = myNewIntent.getStringExtra("myUniqueId");//gets the string from SearchByWord under the "myUniqueId" id
+
         Backend tbd= new Backend();
-        String mDrawableName = tbd.pathArray2[numberData];
-        int resID = getResources().getIdentifier(mDrawableName,"drawable", getPackageName());
-        i.setImageResource(resID);
+        int numberData= tbd.getAPosition(myNewString);//gets the position of the string based on a method in the Backend class
 
-        TextView t = (TextView) findViewById(R.id.displayWord);
-        t.setText(tbd.wordArray2[numberData]);
+        /*We have to use getAPosition rather than just passing the position from ItemClickListener because
+        we use a filter to parse down the list for the user based on what text they input.
+        If we don't try to find a matching position it'll just broadcast the position of the smaller list, versus what actually is in the array.
+        */
+
+        //int numberData = extras.getInt("Position");
+        //Toast.makeText(this, ""+ numberData , Toast.LENGTH_SHORT).show();
+        ImageView i;//create a new image view
+        i = (ImageView) findViewById(R.id.mySpecialImage);//associates the imageview i with 'mySpecialImage' in the XML
+        String mDrawableName = tbd.pathArray2[numberData];//creates a string from a position and pathArray2
+        int resID = getResources().getIdentifier(mDrawableName,"drawable", getPackageName());//turns the string path into a resource ID in drawable
+        i.setImageResource(resID);//sets the image to the resource in resID
+        TextView t = (TextView) findViewById(R.id.displayWord);//sets t to the text id 'displayword'
+        t.setText(tbd.wordArray2[numberData]);//takes the string in the array and puts it into t text view
 
     }
 }
