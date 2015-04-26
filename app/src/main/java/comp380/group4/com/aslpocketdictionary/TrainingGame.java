@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.RadioGroup;
 
 
-public class TrainingGame extends Activity {
+public class TrainingGame extends ActionBarActivity {
     List<TrainingGameQuestions> quesList;
     int score=0;
     int qid=0;
@@ -25,6 +25,7 @@ public class TrainingGame extends Activity {
     RadioButton rda, rdb, rdc;
     Button butNext;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training_game);

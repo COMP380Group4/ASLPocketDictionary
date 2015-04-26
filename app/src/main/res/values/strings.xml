@@ -164,5 +164,8 @@
         <item>"ASL is considered a foreign language."</item>
         <item>"Deaf History Month is observed from March 13th to April 15th every year."</item>
     </string-array>
+    <string name="title_activity_basic_training_game">BasicTrainingGameActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

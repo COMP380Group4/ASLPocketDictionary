@@ -7,17 +7,27 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.widget.Toast;
 
 
 public class MainScreen extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
+        //shouldn't need to create all the arrays.
+        // Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main_screen);
+        Bundle extras = getIntent().getExtras();//extra should be passed form the basictraininggame activity
+        if(extras != null) {//makes sure we're not operating on anything null
+            int score = extras.getInt("yourScore");//assigns scores
+            int total = extras.getInt("yourTotal");//assigns questions
+            Toast.makeText(getApplication(), "You Scored " + score + " Out of " + total, Toast.LENGTH_SHORT).show();//shows score/questions
+            getIntent().removeExtra("yourScore");//clean up
+            getIntent().removeExtra("yourTotal");//clean up
+        }
+
     }
 
     public void goHome(View view) {
@@ -42,7 +52,7 @@ public class MainScreen extends ActionBarActivity {
     }
     //called when the user clicks the Training Game button
     public void trainingGame(View view) {
-        Intent TGList=new Intent(getApplicationContext(),TrainingGame.class);
+        Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);
         startActivity(TGList);
     }
 
