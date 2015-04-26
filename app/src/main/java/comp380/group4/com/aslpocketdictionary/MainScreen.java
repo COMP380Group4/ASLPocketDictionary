@@ -23,7 +23,7 @@ public class MainScreen extends ActionBarActivity {
         if(extras != null) {//makes sure we're not operating on anything null
             int score = extras.getInt("yourScore");//assigns scores
             int total = extras.getInt("yourTotal");//assigns questions
-            Toast.makeText(getApplication(), "You Scored " + score + " Out of " + total, Toast.LENGTH_SHORT).show();//shows score/questions
+            Toast.makeText(getApplication(), "You Scored " + score + " Out of " + total, Toast.LENGTH_LONG).show();//shows score/questions
             getIntent().removeExtra("yourScore");//clean up
             getIntent().removeExtra("yourTotal");//clean up
         }

@@ -32,7 +32,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_training_game);
-
+        getSupportActionBar().hide();
         tbd = new Backend(); //create the back end arrays.
         Bundle extras = getIntent().getExtras();//this is to get any info passed to this activity
         if(extras != null) {//if there is information being passed then we do some stuff

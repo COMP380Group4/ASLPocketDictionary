@@ -17,17 +17,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/imagequestion"
         android:layout_gravity="center_horizontal"
-        android:minHeight="300dp"
-        android:minWidth="300dp"
+        android:minHeight="250dp"
+        android:minWidth="250dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:maxHeight="300dp"
-        android:maxWidth="300dp" />
+        android:maxHeight="250dp"
+        android:maxWidth="250dp" />
 
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="100dp"
-        android:id="@+id/radioGroup1">
+        android:id="@+id/radioGroup1"
+        android:paddingTop="10dp"
+        android:layout_margin="10dp">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -56,5 +58,6 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/buttonSubmit"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
 </LinearLayout>

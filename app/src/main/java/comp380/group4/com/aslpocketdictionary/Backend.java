@@ -36,8 +36,8 @@ public class Backend {
         String[] pathArray2 = {
                 "hello", "goodbye", "home", "work", "school",
                 "store", "church", "day", "night", "week",
-                "month", "year", "mom", "dad", "sibiling",
-                "sibiling", "grandpa", "grandpa", "please", "excuse",
+                "month", "year", "mom", "dad", "sibling",
+                "sibling", "grandpa", "grandpa", "please", "excuse",
                 "thankyou", "help", "who", "when", "where",
                 "what", "happy", "angry", "sad", "sorry",
                 "cry", "like", "good", "bad", "love"};
