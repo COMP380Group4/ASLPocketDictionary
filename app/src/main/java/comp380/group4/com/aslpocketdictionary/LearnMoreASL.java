@@ -1,23 +1,17 @@
 package comp380.group4.com.aslpocketdictionary;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
 
 public class LearnMoreASL extends ActionBarActivity {
 
-    TextView funFacts;
+    TextView funFacts, signOfDay;
     String[] fun_facts;
-    ArrayList<String> fun_factList = new ArrayList<>();
     int index;
 
     Calendar calendar = Calendar.getInstance();
@@ -43,6 +37,7 @@ public class LearnMoreASL extends ActionBarActivity {
 
         //initialize TextView
         funFacts = (TextView)findViewById(R.id.funFacts);
+        signOfDay = (TextView)findViewById(R.id.textView3);
 
         //display sign of the day
         Backend tbd = new Backend();
@@ -51,29 +46,9 @@ public class LearnMoreASL extends ActionBarActivity {
         String mDrawableName = tbd.pathArray2[index];//creates a string from a position and pathArray2
         int resID = getResources().getIdentifier(mDrawableName,"drawable", getPackageName());//turns the string path into a resource ID in drawable
         i.setImageResource(resID);//sets the image to the resource in resID
+        String signName = tbd.wordArray2[index]; //creates a string from a position and pathArray2
+        signOfDay.setText("Sign of the Day - \"" + signName + "\""); //display title with name of sign for the day
 
         funFacts.setText(fun_facts[index]);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_learn_more_asl, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

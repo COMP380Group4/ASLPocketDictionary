@@ -7,49 +7,59 @@
     tools:context="comp380.group4.com.aslpocketdictionary.LearnMoreASL"
     android:background="#00A0E9">
 
-    <TextView
-        android:text="Sign of the Day"
-        android:layout_width="wrap_content"
-        android:textColor="#ffff"
-        android:textStyle="bold|italic"
-        android:textSize="28sp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="#ffff"
+            android:textStyle="bold|italic"
+            android:textSize="28sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/signoftheday"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:text="ASL Fun Fact"
-        android:layout_width="wrap_content"
-        android:textColor="#ffff"
-        android:textStyle="bold|italic"
-        android:textSize="28sp"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView6"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:text="ASL Fun Fact"
+            android:layout_width="wrap_content"
+            android:textColor="#ffff"
+            android:textStyle="bold|italic"
+            android:textSize="28sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/funFacts"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView" >
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/signoftheday"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/funFacts"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true" />
+        </ScrollView>
+    </LinearLayout>
+
 
 </RelativeLayout>
