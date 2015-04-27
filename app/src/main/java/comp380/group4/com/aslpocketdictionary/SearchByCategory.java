@@ -6,11 +6,13 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -18,7 +20,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 
-public class SearchByCategory extends Activity {
+public class SearchByCategory extends Activity implements AdapterView.OnItemClickListener {
 
     ListView list;
     String[] listofCats = {
@@ -56,7 +58,16 @@ public class SearchByCategory extends Activity {
         list = (ListView) findViewById(R.id.listViewCategories2);
         myCustomAdapter myNewAdapter = new myCustomAdapter(this, listofCats, picsOfCats);
         list.setAdapter(myNewAdapter);
+        list.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        String selectedFromList =(list.getItemAtPosition(position).toString());//this is to grab the string from the list lv
+        Intent SBW = new Intent(getApplicationContext(),SearchByWord.class);// this is to create a new intent
+        SBW.putExtra("myUniqueId", selectedFromList.toString());// this is to pass the string into the intent
+        startActivity(SBW);
     }
 
 

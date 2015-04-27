@@ -21,16 +21,14 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
 
     // List view
     private ListView lv;
-
     // Listview Adapter
     ArrayAdapter<String> adapter;
-
     // Search EditText
     EditText inputSearch;
 
-
     // ArrayList for Listview
-    ArrayList<HashMap<String, String>> productList;
+    ArrayList<String> productList = new ArrayList<String>();//initialize the Array list
+    String[] products;//initialize products
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,15 +36,25 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.activity_search_by_word);
 
         // Listview Data
-
         Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
-        String products[] = theBigDatabase.wordArray2;
-        /*String products[] = {"Hello", "Good-Bye", "School", "Class", "Morning",
-                "Night", "Thanks",
-                "Why", "Midterm", "Professor", "friend"};
-        /*
 
-         */
+        Bundle extras = getIntent().getExtras();//get some info if anything is passed
+        if(extras != null) {//makes sure we're not operating on anything null. This also prevents the bottom code from running if it isn't being requested by searchbycategory
+            String myNewString = extras.getString("myUniqueId");
+            for (int i = 0; i < 35; i++) {
+                if (theBigDatabase.categoryArray2[i].equals(myNewString)) {//if we have a category match, then add the associated word from the word array into the productlist
+                    productList.add(theBigDatabase.wordArray2[i]);
+                }
+                else{
+
+                }
+            }
+           products = productList.toArray(new String[productList.size()]);//if we got passed a category use the productlist to create a product array
+
+        }else{
+           products= theBigDatabase.wordArray.toArray(new String[theBigDatabase.wordArray.size()]);//if there is nothing coming in from an intent, just grab the whole thing
+        }
+
         lv = (ListView) findViewById(R.id.list_view);
         inputSearch = (EditText) findViewById(R.id.inputSearch);
 
