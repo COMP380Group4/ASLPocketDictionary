@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -14,10 +17,13 @@ public class LearnMoreASL extends ActionBarActivity {
 
     TextView funFacts;
     String[] fun_facts;
+    ArrayList<String> fun_factList = new ArrayList<>();
     int index;
 
     Calendar calendar = Calendar.getInstance();
     int dayOfYear;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,10 @@ public class LearnMoreASL extends ActionBarActivity {
         //initialize dayOfYear
         dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
 
+        //import the fun facts string array from Values folder
+        fun_facts = getResources().getStringArray(R.array.fun_facts);
+
+
         //initialize index
         index = dayOfYear%fun_facts.length;
 
@@ -35,9 +45,12 @@ public class LearnMoreASL extends ActionBarActivity {
         funFacts = (TextView)findViewById(R.id.funFacts);
 
         //display sign of the day
-
-        //import the fun facts string array from Values folder
-        fun_facts = getResources().getStringArray(R.array.fun_facts);
+        Backend tbd = new Backend();
+        ImageView i;//create a new image view
+        i = (ImageView) findViewById(R.id.signoftheday);//associates the imageview i with 'mySpecialImage' in the XML
+        String mDrawableName = tbd.pathArray2[index];//creates a string from a position and pathArray2
+        int resID = getResources().getIdentifier(mDrawableName,"drawable", getPackageName());//turns the string path into a resource ID in drawable
+        i.setImageResource(resID);//sets the image to the resource in resID
 
         funFacts.setText(fun_facts[index]);
     }
