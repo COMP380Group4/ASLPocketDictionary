@@ -40,19 +40,19 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
             for(int i =0; i<size; i++){
                 used[i]=temp[i];
             }
-            score = extras.getInt("yourScore");//we transfer scores
-            total = extras.getInt("yourTotal");//we transfer total questions asked
+            score = extras.getInt("yourScore");//we trasnfer scores
+            total = extras.getInt("yourTotal");//we trasnfer total questions asked
             getIntent().removeExtra("yourScore");//we make sure to remove everything to keep things clean
             getIntent().removeExtra("yourTotal");
             getIntent().removeExtra("usedPositions");
         }
-        else{//otherwise its the first time that this activity is being run, therefore all we need to do is populate the used array with zeroes
+        else{//otherwise its the firs time that this activity is being run, therefore all we need to do is populate the used array with zeroes
             for(int i =0; i<size; i++){
                 used[i]=0;
             }
         }
 
-        //The code below gets a random picture, and puts the picture on the xml. It also marks on a separate array that we used a  particular picture.
+        //The code below gets a random picture, and puts the picture on the xml. It also marks on a seperate array that we used a  particular picture.
         Random randNumber = new Random();////create new random number
         position = randNumber.nextInt(35);//35 is exclusive, 0 is included... remember arrays starts at 0 and go to 34!!!
         used[position]=1;//do our first action with position and marking the used array
@@ -114,12 +114,8 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
                 if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
                 {
                     score++;//plus one to score
-<<<<<<< HEAD
-                    total++;//plus one to questions
-=======
                     Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
                     total++;//plus one to quesitons
->>>>>>> origin/master
                     Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
                     TGList.putExtra("usedPositions", used);//pass the used array
                     TGList.putExtra("yourScore", score);//pass the current score

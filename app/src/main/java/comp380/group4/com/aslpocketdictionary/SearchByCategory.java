@@ -24,21 +24,21 @@ public class SearchByCategory extends Activity implements AdapterView.OnItemClic
 
     ListView list;
     String[] listofCats = {
-                "greetings",
-                "places",
-                "time",
-                "family",
-                "request",
-                "feelings"
+            "greetings",
+            "places",
+            "time",
+            "family",
+            "request",
+            "feelings"
     };
 
     int[] picsOfCats ={
-                R.drawable.greetings,
-                R.drawable.places,
-                R.drawable.time,
-                R.drawable.family,
-                R.drawable.requests,
-                R.drawable.feelings
+            R.drawable.greetings,
+            R.drawable.places,
+            R.drawable.time,
+            R.drawable.family,
+            R.drawable.requests,
+            R.drawable.feelings
     };
 
 
