@@ -23,7 +23,7 @@ public class Backend {
     String[] categoryArray2 = {
 
             "feelings", "feelings", "family", "places", "feelings", "family",
-            "time", "requests", "feelings", "greetings", "family", "family", "feelings",
+            "time", "request", "feelings", "greetings", "family", "family", "feelings",
             "greetings", "feelings", "places", "feelings", "feelings", "family", "time", "time",
             "feelings", "feelings", "places", "feelings", "family", "places", "greetings",
             "time", "request", "request", "request", "request", "places", "time"};
