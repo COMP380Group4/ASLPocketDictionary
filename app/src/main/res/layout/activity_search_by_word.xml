@@ -10,6 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Search for your word.."
+        android:textSize="22dp"
         android:inputType="textVisiblePassword"/>
 
     <!-- List View -->

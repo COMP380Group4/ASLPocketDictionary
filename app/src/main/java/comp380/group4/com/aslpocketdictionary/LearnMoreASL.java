@@ -47,7 +47,7 @@ public class LearnMoreASL extends ActionBarActivity {
         int resID = getResources().getIdentifier(mDrawableName,"drawable", getPackageName());//turns the string path into a resource ID in drawable
         i.setImageResource(resID);//sets the image to the resource in resID
         String signName = tbd.wordArray2[index]; //creates a string from a position and pathArray2
-        signOfDay.setText("Sign of the Day - \"" + signName + "\""); //display title with name of sign for the day
+        signOfDay.setText("Sign of the Day - \"" + signName + "\" "); //display title with name of sign for the day
 
         funFacts.setText(fun_facts[index]);
     }
