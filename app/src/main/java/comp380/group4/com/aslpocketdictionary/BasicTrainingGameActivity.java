@@ -114,6 +114,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
                 if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
                 {
                     score++;//plus one to score
+                    Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
                     total++;//plus one to quesitons
                     Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
                     TGList.putExtra("usedPositions", used);//pass the used array
@@ -132,7 +133,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
                 }
                 else{//wrong answer
                     total++;
-                    Toast.makeText(getApplication(),"Wrong Answer!!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplication(),"Incorrect!",Toast.LENGTH_SHORT).show();
                     Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);
                     TGList.putExtra("usedPositions", used);
                     TGList.putExtra("yourScore", score);

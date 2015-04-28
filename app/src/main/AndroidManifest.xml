@@ -39,7 +39,8 @@
         </activity>
         <activity
             android:name=".BasicTrainingGameActivity"
-            android:label="@string/title_activity_basic_training_game" >
+            android:label="@string/title_activity_basic_training_game"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
