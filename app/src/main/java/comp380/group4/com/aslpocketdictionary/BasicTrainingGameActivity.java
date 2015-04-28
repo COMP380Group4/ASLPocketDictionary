@@ -1,6 +1,9 @@
 package comp380.group4.com.aslpocketdictionary;
 
+import android.app.Notification;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +29,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
     Backend tbd;
     final int size = 35;
     final int used[] = new int[size];//create a new recently used array.
+    private Vibrator vibrator;
 
 
     @Override
@@ -34,6 +38,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
         setContentView(R.layout.activity_basic_training_game);
         getSupportActionBar().hide();
         tbd = new Backend(); //create the back end arrays.
+        vibrator= (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         Bundle extras = getIntent().getExtras();//this is to get any info passed to this activity
         if(extras != null) {//if there is information being passed then we do some stuff
             int[] temp = extras.getIntArray("usedPositions");//we trasnfer the used array
@@ -113,8 +118,11 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
 
                 if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
                 {
+
+
                     score++;//plus one to score
                     Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
+                    vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
                     total++;//plus one to quesitons
                     Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
                     TGList.putExtra("usedPositions", used);//pass the used array
@@ -134,6 +142,7 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
                 else {//wrong answer
                     total++;
                     Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                    vibrator.vibrate(new long[]{0, 400, 0, 0, 0, 0, 400, 0 , 0, 0, 0, 500}, -1);
                     Intent TGList = new Intent(getApplicationContext(), BasicTrainingGameActivity.class);
                     TGList.putExtra("usedPositions", used);
                     TGList.putExtra("yourScore", score);
