@@ -131,30 +131,38 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
                         //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
                     }
                 }
-                else{//wrong answer
+                else {//wrong answer
                     total++;
-                    Toast.makeText(getApplication(),"Incorrect!",Toast.LENGTH_SHORT).show();
-                    Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);
+                    Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                    Intent TGList = new Intent(getApplicationContext(), BasicTrainingGameActivity.class);
                     TGList.putExtra("usedPositions", used);
                     TGList.putExtra("yourScore", score);
                     TGList.putExtra("yourTotal", total);
-                    if(total<5){
+                    if (total < 5) {
                         startActivity(TGList);
+                    } else {
+
+
+                    Intent goBackHome = new Intent(getApplicationContext(), MainScreen.class);
+                    goBackHome.putExtra("yourScore", score);
+                    goBackHome.putExtra("yourTotal", total);
+
+                    startActivity(goBackHome);
+                    //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
                     }
-                    else{
-                        Intent goBackHome = new Intent(getApplicationContext(),MainScreen.class);
-                        goBackHome.putExtra("yourScore", score);
-                        goBackHome.putExtra("yourTotal", total);
-                        startActivity(goBackHome);
-                        //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
-                    }
+                }
                 }
 
 
-            }
+
         });
     }
 
+    @Override
+    public void onBackPressed() {
+
+        return;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
