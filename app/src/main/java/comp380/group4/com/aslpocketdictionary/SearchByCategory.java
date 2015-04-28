@@ -28,7 +28,7 @@ public class SearchByCategory extends Activity implements AdapterView.OnItemClic
                 "places",
                 "time",
                 "family",
-                "requests",
+                "request",
                 "feelings"
     };
 
