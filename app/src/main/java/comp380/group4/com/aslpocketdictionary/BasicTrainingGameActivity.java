@@ -108,57 +108,64 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
             rd3.setText(tbd.wordArray2[position]);
         }
 
+
         butNext.setOnClickListener(new View.OnClickListener() {//creates an onclick listener to find which button the user clicks
             @Override
             public void onClick(View v) {
-                RadioGroup g = (RadioGroup) findViewById(R.id.radioGroup1);//grabs the radio group
-                int selected = g.getCheckedRadioButtonId();//finds what INDEX is selected in the group
-                RadioButton b = (RadioButton) findViewById(selected);//returns the id of the clicked button based on index.
-                //b.getText().toString();
-
-                if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
-                {
-
-
-                    score++;//plus one to score
-                    Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
-                    vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
-                    total++;//plus one to quesitons
-                    Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
-                    TGList.putExtra("usedPositions", used);//pass the used array
-                    TGList.putExtra("yourScore", score);//pass the current score
-                    TGList.putExtra("yourTotal", total);//pass total number of questions
-                    if(total<5){//as long as questions are less than five we're okay, loop will go to else once five questions are asked
-                        startActivity(TGList);
-                    }
-                    else {
-                        Intent goBackHome = new Intent(getApplicationContext(),MainScreen.class);//get ready to go to homescreen
-                        goBackHome.putExtra("yourScore", score);//pass the score for a homescreen toast
-                        goBackHome.putExtra("yourTotal", total);//pass the total for a home screen toast
-                        startActivity(goBackHome);//celebrate!!!!
-                        //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
-                    }
+                if(rd1.isChecked()==false && rd2.isChecked()==false && rd3.isChecked() == false){
+                    Toast.makeText(getApplication(),"Please Select an Answer ",Toast.LENGTH_LONG).show();
                 }
-                else {//wrong answer
-                    total++;
-                    Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
-                    vibrator.vibrate(new long[]{0, 400, 0, 0, 0, 0, 400, 0 , 0, 0, 0, 500}, -1);
-                    Intent TGList = new Intent(getApplicationContext(), BasicTrainingGameActivity.class);
-                    TGList.putExtra("usedPositions", used);
-                    TGList.putExtra("yourScore", score);
-                    TGList.putExtra("yourTotal", total);
-                    if (total < 5) {
-                        startActivity(TGList);
-                    } else {
+                else{
+                    RadioGroup g = (RadioGroup) findViewById(R.id.radioGroup1);//grabs the radio group
+                    int selected = g.getCheckedRadioButtonId();//finds what INDEX is selected in the group
+                    RadioButton b = (RadioButton) findViewById(selected);//returns the id of the clicked button based on index.
+                    //b.getText().toString();
+
+                    if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
+                    {
 
 
-                    Intent goBackHome = new Intent(getApplicationContext(), MainScreen.class);
-                    goBackHome.putExtra("yourScore", score);
-                    goBackHome.putExtra("yourTotal", total);
-
-                    startActivity(goBackHome);
-                    //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
+                        score++;//plus one to score
+                        Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
+                        vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
+                        total++;//plus one to quesitons
+                        Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
+                        TGList.putExtra("usedPositions", used);//pass the used array
+                        TGList.putExtra("yourScore", score);//pass the current score
+                        TGList.putExtra("yourTotal", total);//pass total number of questions
+                        if(total<5){//as long as questions are less than five we're okay, loop will go to else once five questions are asked
+                            startActivity(TGList);
+                        }
+                        else {
+                            Intent goBackHome = new Intent(getApplicationContext(),MainScreen.class);//get ready to go to homescreen
+                            goBackHome.putExtra("yourScore", score);//pass the score for a homescreen toast
+                            goBackHome.putExtra("yourTotal", total);//pass the total for a home screen toast
+                            startActivity(goBackHome);//celebrate!!!!
+                            //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
+                        }
                     }
+                    else {//wrong answer
+                        total++;
+                        Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
+                        vibrator.vibrate(new long[]{0, 400, 0, 0, 0, 0, 400, 0 , 0, 0, 0, 500}, -1);
+                        Intent TGList = new Intent(getApplicationContext(), BasicTrainingGameActivity.class);
+                        TGList.putExtra("usedPositions", used);
+                        TGList.putExtra("yourScore", score);
+                        TGList.putExtra("yourTotal", total);
+                        if (total < 5) {
+                            startActivity(TGList);
+                        } else {
+
+
+                            Intent goBackHome = new Intent(getApplicationContext(), MainScreen.class);
+                            goBackHome.putExtra("yourScore", score);
+                            goBackHome.putExtra("yourTotal", total);
+
+                            startActivity(goBackHome);
+
+                        }
+                    }
+
                 }
                 }
 
