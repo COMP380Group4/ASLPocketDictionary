@@ -1,10 +1,11 @@
 package comp380.group4.com.aslpocketdictionary;
 
-import android.app.Notification;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Vibrator;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 
-public class BasicTrainingGameActivity extends ActionBarActivity {
+public class BasicTrainingGameActivity extends Activity {
     RadioButton rd1, rd2, rd3;
     Button butNext;
     int score;
@@ -36,7 +37,6 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_training_game);
-        getSupportActionBar().hide();
         tbd = new Backend(); //create the back end arrays.
         vibrator= (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         Bundle extras = getIntent().getExtras();//this is to get any info passed to this activity
@@ -126,58 +126,31 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
 
                     if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
                     {
-                        score++;//plus one to score
-                        Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
-                        vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
-                        total++;//plus one to quesitons
-                        Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
-                        TGList.putExtra("usedPositions", used);//pass the used array
-                        TGList.putExtra("yourScore", score);//pass the current score
-                        TGList.putExtra("yourTotal", total);//pass total number of questions
+                        correct();
                         if(total<5){//as long as questions are less than five we're okay, loop will go to else once five questions are asked
-                            startActivity(TGList);
+                            restartGame();
                         }
                         else {
-                            Intent goBackHome = new Intent(getApplicationContext(),MainScreen.class);//get ready to go to homescreen
-                            goBackHome.putExtra("yourScore", score);//pass the score for a homescreen toast
-                            goBackHome.putExtra("yourTotal", total);//pass the total for a home screen toast
-                            startActivity(goBackHome);//celebrate!!!!
-                            //Toast.makeText(getApplication(),"You Scored " + score + " Out of " + total,Toast.LENGTH_SHORT).show();
+                            endGame();//new method to just end the game and return a dialog box see below
                         }
                     }
                     else {//wrong answer
-                        total++;
-                        Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
-                        vibrator.vibrate(new long[]{0, 400, 0, 0, 0, 0, 400, 0 , 0, 0, 0, 500}, -1);
-                        Intent TGList = new Intent(getApplicationContext(), BasicTrainingGameActivity.class);
-                        TGList.putExtra("usedPositions", used);
-                        TGList.putExtra("yourScore", score);
-                        TGList.putExtra("yourTotal", total);
+                        incorrect();
                         if (total < 5) {
-                            startActivity(TGList);
+                            restartGame();
+
                         } else {
 
-
-                            Intent goBackHome = new Intent(getApplicationContext(), MainScreen.class);
-                            goBackHome.putExtra("yourScore", score);
-                            goBackHome.putExtra("yourTotal", total);
-
-                            startActivity(goBackHome);
-
+                            endGame();//new method to just end the game and return a dialog box see below
                         }
                     }
-
                 }
-                }
-
-
-
+            }
         });
     }
 
     @Override
     public void onBackPressed() {
-
         return;
     }
 
@@ -203,10 +176,50 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void endGame(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(BasicTrainingGameActivity.this);
+        alertDialog.setTitle("Game Completed");
+        alertDialog.setMessage("You Scored " + score + " out of " + total);
+        alertDialog.setPositiveButton("Play Again", new DialogInterface.OnClickListener(){
 
-    void setQuestions(){
-
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                score = 0;
+                total = 0;
+                Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
+                startActivity(TGList);
+            }
+        });
+        alertDialog.setNegativeButton("OK Thanks",new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent goBackHome = new Intent(getApplicationContext(),MainScreen.class);//get ready to go to homescreen
+                startActivity(goBackHome);//celebrate!!!!
+            }
+        });
+        AlertDialog alert = alertDialog.create();
+        alert.show();
     }
 
+    public void correct(){
+        score++;//plus one to score
+        Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
+        vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
+        total++;//plus one to quesitons
+    }
+
+    public void incorrect(){
+        total++;
+        Toast.makeText(getApplication(), "Incorrect!", Toast.LENGTH_SHORT).show();
+        vibrator.vibrate(new long[]{0, 400, 0, 0, 0, 0, 400, 0 , 0, 0, 0, 500}, -1);
+    }
+
+    public void restartGame(){
+        Intent TGList=new Intent(getApplicationContext(),BasicTrainingGameActivity.class);//get ready to relaunch the game again
+        TGList.putExtra("usedPositions", used);//pass the used array
+        TGList.putExtra("yourScore", score);//pass the current score
+        TGList.putExtra("yourTotal", total);//pass total number of questions
+        startActivity(TGList);
+    }
 
 }
