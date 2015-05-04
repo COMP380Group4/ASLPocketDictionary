@@ -60,6 +60,11 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
         //The code below gets a random picture, and puts the picture on the xml. It also marks on a seperate array that we used a  particular picture.
         Random randNumber = new Random();////create new random number
         position = randNumber.nextInt(35);//35 is exclusive, 0 is included... remember arrays starts at 0 and go to 34!!!
+
+        while(used[position]==1){//make sure position doesn't use a previously used value so we use new questions etc.
+            position =randNumber.nextInt(35);
+        }
+
         used[position]=1;//do our first action with position and marking the used array
 
         //here we used position to generate the picture to test our users
@@ -75,16 +80,14 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
         rd3=(RadioButton)findViewById(R.id.questionbutton3);
         butNext=(Button)findViewById(R.id.buttonSubmit);
 
-       /* final int[] copyused = new int[size];
-        for(int j=0; j< size;j++){
-            copyused[j]= used[j];
-        }*/
 
         int choose = randNumber.nextInt(3);//we place the answer in a random location based on the three buttons
+
         int choose2 = randNumber.nextInt(35);
         while (choose2 == position){
             choose2 = randNumber.nextInt(35);
         }
+
         int choose3 = randNumber.nextInt(35);
         while (choose3 == position || choose3 == choose2){
             choose3 = randNumber.nextInt(35);
@@ -123,8 +126,6 @@ public class BasicTrainingGameActivity extends ActionBarActivity {
 
                     if(tbd.wordArray2[position].equals(b.getText().toString()))//verifies right answer by comparing what was in selection to what was selected.
                     {
-
-
                         score++;//plus one to score
                         Toast.makeText(getApplication(),"Correct!",Toast.LENGTH_SHORT).show();
                         vibrator.vibrate(new long[] { 0, 500, 0 }, -1);
