@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 
 public class MainScreen extends ActionBarActivity {
 
@@ -19,6 +21,12 @@ public class MainScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main_screen);
+        try {
+            Dictionary dic = new Dictionary(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         //Bundle extras = getIntent().getExtras();//extra should be passed form the basictraininggame activity
         /*if(extras != null) {//makes sure we're not operating on anything null
             int score = extras.getInt("yourScore");//assigns scores

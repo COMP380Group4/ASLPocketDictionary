@@ -1,0 +1,177 @@
+{ "dictionary":[
+ {
+   "word": "hello",
+   "category": "greetings",
+   "path": "hello.jpg"
+ },
+ {
+   "word": "good bye",
+   "category": "greetings",
+   "path": "goodbye.png"
+ },
+ {
+   "word": "home",
+   "category": "places",
+   "path": "home.gif"
+ },
+ {
+   "word": "work",
+   "category": "places",
+   "path": "work.gif"
+ },
+ {
+   "word": "school",
+   "category": "places",
+   "path": "school.gif"
+ },
+ {
+   "word": "store",
+   "category": "places",
+   "path": "store.gif"
+ },
+ {
+   "word": "church",
+   "category": "places",
+   "path": "church.gif"
+ },
+ {
+   "word": "day",
+   "category": "time",
+   "path": "day.jpg"
+ },
+ {
+   "word": "night",
+   "category": "time",
+   "path": "night.gif"
+ },
+ {
+   "word": "week",
+   "category": "time",
+   "path": "week.gif"
+ },
+ {
+   "word": "month",
+   "category": "time",
+   "path": "month.gif"
+ },
+ {
+   "word": "year",
+   "category": "time",
+   "path": "year.gif"
+ },
+ {
+   "word": "mom",
+   "category": "family",
+   "path": "mom.gif"
+ },
+ {
+   "word": "dad",
+   "category": "family",
+   "path": "dad.gif"
+ },
+ {
+   "word": "brother",
+   "category": "family",
+   "path": "sibiling.jpg"
+ },
+ {
+   "word": "sister",
+   "category": "family",
+   "path": "sibiling.jpg"
+ },
+ {
+   "word": "grandpa",
+   "category": "family",
+   "path": "grandpa.gif"
+ },
+ {
+   "word": "grandma",
+   "category": "family",
+   "path": "grandpa.gif"
+ },
+ {
+   "word": "please",
+   "category": "requests",
+   "path": "please.gif"
+ },
+ {
+   "word": "excuse",
+   "category": "requests",
+   "path": "excuse.gif"
+ },
+ {
+   "word": "thank you",
+   "category": "requests",
+   "path": "thankyou.gif"
+ },
+ {
+   "word": "help",
+   "category": "requests",
+   "path": "help.gif"
+ },
+ {
+   "word": "who",
+   "category": "requests",
+   "path": "who.gif"
+ },
+ {
+   "word": "when",
+   "category": "requests",
+   "path": "when.gif"
+ },
+ {
+   "word": "where",
+   "category": "requests",
+   "path": "where.gif"
+ },
+ {
+   "word": "what",
+   "category": "requests",
+   "path": "what.jpg"
+ },
+ {
+   "word": "happy",
+   "category": "feelings",
+   "path": "happy.gif"
+ },
+ {
+   "word": "angry",
+   "category": "feelings",
+   "path": "angry.gif"
+ },
+ {
+   "word": "sad",
+   "category": "feelings",
+   "path": "sad.gif"
+ },
+ {
+   "word": "sorry",
+   "category": "feelings",
+   "path": "sorry.gif"
+ },
+ {
+   "word": "cry",
+   "category": "feelings",
+   "path": "cry.gif"
+ },
+ {
+   "word": "like",
+   "category": "feelings",
+   "path": "like.gif"
+ },
+ {
+   "word": "good",
+   "category": "feelings",
+   "path": "good.gif"
+ },
+ {
+   "word": "bad",
+   "category": "feelings",
+   "path": "bad.gif"
+ },
+ {
+   "word": "love",
+   "category": "feelings",
+   "path": "love.gif"
+ }
+]}
