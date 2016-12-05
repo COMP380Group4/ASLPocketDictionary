@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONException;
+
 import java.util.Calendar;
 
 
@@ -40,7 +42,12 @@ public class LearnMoreASL extends ActionBarActivity {
         signOfDay = (TextView)findViewById(R.id.textView3);
 
         //display sign of the day
-        Backend tbd = new Backend();
+        Backend tbd = null;
+        try {
+            tbd = new Backend(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         ImageView i;//create a new image view
         i = (ImageView) findViewById(R.id.signoftheday);//associates the imageview i with 'mySpecialImage' in the XML
         String mDrawableName = tbd.pathArray2[index];//creates a string from a position and pathArray2

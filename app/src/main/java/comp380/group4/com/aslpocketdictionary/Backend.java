@@ -1,6 +1,9 @@
 package comp380.group4.com.aslpocketdictionary;
 
+import android.content.Context;
 import android.net.Uri;
+
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,40 +13,52 @@ import java.util.Arrays;
  */
 public class Backend {
 
+    Context recievedContext;
+
     int size = 35;//Right now we're assuming the entire backend is hardcoded for speed and simplicity.
 
-    String[] wordArray2 = {
-            "angry", "bad", "brother", "church", "cry", "dad",
-            "day", "excuse", "good", "good bye", "grandma", "grandpa", "happy",
-            "hello", "help", "home", "like", "love", "mom", "month", "night",
-            "please", "sad",  "school", "sorry", "sister", "store", "thank you",
-            "week", "what",  "when", "where", "who", "work", "year"};
+    String[] wordArray2;
 
+    String[] categoryArray2;
 
-    String[] categoryArray2 = {
+    String[] pathArray2;
 
-            "feelings", "feelings", "family", "places", "feelings", "family",
-            "time", "request", "feelings", "greetings", "family", "family", "feelings",
-            "greetings", "feelings", "places", "feelings", "feelings", "family", "time", "time",
-            "feelings", "feelings", "places", "feelings", "family", "places", "greetings",
-            "time", "request", "request", "request", "request", "places", "time"};
+    ArrayList<String> wordArray;
+    ArrayList<String> categoryArray;
+    ArrayList<String> pathArray;
 
+    MyApp contextHelper = new MyApp();
 
+    public Backend(Context c) throws JSONException {
 
-    String[] pathArray2 = {
-            "angry", "bad", "sibling", "church", "cry", "dad",
-            "day", "excuse", "good", "goodbye", "grandpa", "grandpa", "happy",
-            "hello", "help", "home", "like", "love", "mom", "month", "night",
-            "please", "sad",  "school", "sorry", "sibling", "store", "thankyou",
-            "week", "what",  "when", "where", "who", "work", "year"};
+        recievedContext = c;
+        Dictionary myNewDictionary = new Dictionary(c);
+        int length = myNewDictionary.lengthOfDictionaryOfEntries();
+        wordArray2 = new String[length];
+        categoryArray2 = new String [length];
+        pathArray2 = new String[length];
+        for(int j = 0; j< length; j++){
+            Entry tempEntry = new Entry();
+            tempEntry = myNewDictionary.getEntryNumber(j);
 
+            wordArray2[j] = tempEntry.word;
+            categoryArray2[j] = tempEntry.category;
+            pathArray2[j]= tempEntry.path;
+
+        }
+
+        makeArrays();
+    }
 
     //Turn the hardcoded arrays above to ArrayLists in order to use List view and use the
     //list methods to make things easier
+    void makeArrays(){
+        wordArray= new ArrayList<String>(Arrays.asList(wordArray2));
+        categoryArray= new ArrayList<String>(Arrays.asList(categoryArray2));
+        pathArray= new ArrayList<String>(Arrays.asList(pathArray2));
 
-    ArrayList<String> wordArray= new ArrayList<String>(Arrays.asList(wordArray2));
-    ArrayList<String> categoryArray= new ArrayList<String>(Arrays.asList(categoryArray2));
-    ArrayList<String> pathArray= new ArrayList<String>(Arrays.asList(pathArray2));
+    }
+
 
     //these GETTERS are to return an array in order to use the ListViews in the XML files
     ArrayList<String> getWordArray(){

@@ -13,8 +13,17 @@ public class Entry implements EntryInterface {
     String category;
     String path;
 
-    void Entry(){//constructor
 
+
+
+    public Entry(){
+
+    }
+
+    public Entry(String w, String c, String p){//constructor
+        putEntryWord(w);
+        putEntryCategory(c);
+        putEntryPath(p);
     }
 
 

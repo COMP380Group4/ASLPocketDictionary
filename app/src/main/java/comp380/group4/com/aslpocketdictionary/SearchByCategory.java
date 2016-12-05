@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import org.json.JSONException;
+
 
 public class SearchByCategory extends Activity implements AdapterView.OnItemClickListener {
 
@@ -50,7 +52,11 @@ public class SearchByCategory extends Activity implements AdapterView.OnItemClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_by_category);
 
-        Backend tbd = new Backend();
+        try {
+            Backend tbd = new Backend(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         // Array of strings storing country names
 
         Resources res = getResources();

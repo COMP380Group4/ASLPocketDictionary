@@ -18,6 +18,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 import java.util.Random;
 
 
@@ -37,7 +39,11 @@ public class BasicTrainingGameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_training_game);
-        tbd = new Backend(); //create the back end arrays.
+        try {
+            tbd = new Backend(getApplicationContext()); //create the back end arrays.
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         vibrator= (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
         Bundle extras = getIntent().getExtras();//this is to get any info passed to this activity
         if(extras != null) {//if there is information being passed then we do some stuff

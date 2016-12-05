@@ -2,176 +2,176 @@
  {
    "word": "hello",
    "category": "greetings",
-   "path": "hello.jpg"
+   "path": "hello"
  },
  {
    "word": "good bye",
    "category": "greetings",
-   "path": "goodbye.png"
+   "path": "goodbye"
  },
  {
    "word": "home",
    "category": "places",
-   "path": "home.gif"
+   "path": "home"
  },
  {
    "word": "work",
    "category": "places",
-   "path": "work.gif"
+   "path": "work"
  },
  {
    "word": "school",
    "category": "places",
-   "path": "school.gif"
+   "path": "school"
  },
  {
    "word": "store",
    "category": "places",
-   "path": "store.gif"
+   "path": "store"
  },
  {
    "word": "church",
    "category": "places",
-   "path": "church.gif"
+   "path": "church"
  },
  {
    "word": "day",
    "category": "time",
-   "path": "day.jpg"
+   "path": "day"
  },
  {
    "word": "night",
    "category": "time",
-   "path": "night.gif"
+   "path": "night"
  },
  {
    "word": "week",
    "category": "time",
-   "path": "week.gif"
+   "path": "week"
  },
  {
    "word": "month",
    "category": "time",
-   "path": "month.gif"
+   "path": "month"
  },
  {
    "word": "year",
    "category": "time",
-   "path": "year.gif"
+   "path": "year"
  },
  {
    "word": "mom",
    "category": "family",
-   "path": "mom.gif"
+   "path": "mom"
  },
  {
    "word": "dad",
    "category": "family",
-   "path": "dad.gif"
+   "path": "dad"
  },
  {
    "word": "brother",
    "category": "family",
-   "path": "sibiling.jpg"
+   "path": "sibiling"
  },
  {
    "word": "sister",
    "category": "family",
-   "path": "sibiling.jpg"
+   "path": "sibiling"
  },
  {
    "word": "grandpa",
    "category": "family",
-   "path": "grandpa.gif"
+   "path": "grandpa"
  },
  {
    "word": "grandma",
    "category": "family",
-   "path": "grandpa.gif"
+   "path": "grandpa"
  },
  {
    "word": "please",
-   "category": "requests",
-   "path": "please.gif"
+   "category": "request",
+   "path": "please"
  },
  {
    "word": "excuse",
-   "category": "requests",
-   "path": "excuse.gif"
+   "category": "request",
+   "path": "excuse"
  },
  {
    "word": "thank you",
-   "category": "requests",
-   "path": "thankyou.gif"
+   "category": "request",
+   "path": "thankyou"
  },
  {
    "word": "help",
-   "category": "requests",
-   "path": "help.gif"
+   "category": "request",
+   "path": "help"
  },
  {
    "word": "who",
-   "category": "requests",
-   "path": "who.gif"
+   "category": "request",
+   "path": "who"
  },
  {
    "word": "when",
-   "category": "requests",
-   "path": "when.gif"
+   "category": "request",
+   "path": "when"
  },
  {
    "word": "where",
-   "category": "requests",
-   "path": "where.gif"
+   "category": "request",
+   "path": "where"
  },
  {
    "word": "what",
-   "category": "requests",
-   "path": "what.jpg"
+   "category": "request",
+   "path": "what"
  },
  {
    "word": "happy",
    "category": "feelings",
-   "path": "happy.gif"
+   "path": "happy"
  },
  {
    "word": "angry",
    "category": "feelings",
-   "path": "angry.gif"
+   "path": "angry"
  },
  {
    "word": "sad",
    "category": "feelings",
-   "path": "sad.gif"
+   "path": "sad"
  },
  {
    "word": "sorry",
    "category": "feelings",
-   "path": "sorry.gif"
+   "path": "sorry"
  },
  {
    "word": "cry",
    "category": "feelings",
-   "path": "cry.gif"
+   "path": "cry"
  },
  {
    "word": "like",
    "category": "feelings",
-   "path": "like.gif"
+   "path": "like"
  },
  {
    "word": "good",
    "category": "feelings",
-   "path": "good.gif"
+   "path": "good"
  },
  {
    "word": "bad",
    "category": "feelings",
-   "path": "bad.gif"
+   "path": "bad"
  },
  {
    "word": "love",
    "category": "feelings",
-   "path": "love.gif"
+   "path": "love"
  }
 ]}

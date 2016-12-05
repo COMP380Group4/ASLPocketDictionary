@@ -2,6 +2,7 @@ package comp380.group4.com.aslpocketdictionary;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import java.io.*;
@@ -13,23 +14,29 @@ import org.json.*;
  */
 
 public class Dictionary implements DictionaryInterface{
-    Context myContext ;
+    MyApp contextHelper = new MyApp();
+    Context myContext = contextHelper.context;
     String location = "listofwordsjson.json";
-    private ArrayList<Entry> dictionary;
+    private ArrayList<Entry> dictionaryOfEntries = new ArrayList<Entry>();
+
+    /*public Dictionary() throws JSONException {
+
+        jsonToEntries();
+
+    }*/
 
 
     public Dictionary(Context c) throws JSONException {//constructor
         //instantiates the array list
         myContext = c;
-        ArrayList<Entry> dictionary = new ArrayList<Entry>();
 
-        //Read from json and create the entries
         jsonToEntries();
 
 
         //Create and Put Entries
 
     }
+
 
     private JSONArray parseJSONData() {
         String JSONString = null;
@@ -70,7 +77,7 @@ public class Dictionary implements DictionaryInterface{
         //Dictionary is created, now to read JSON objects
 
         JSONArray myJsonStuff = parseJSONData();
-        Toast.makeText(myContext,"I got passed parsing!",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(myContext,"I got passed parsing!",Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i< myJsonStuff.length(); i++){
             JSONObject row = myJsonStuff.getJSONObject(i);
@@ -79,7 +86,15 @@ public class Dictionary implements DictionaryInterface{
             String theCat = row.getString("category");
             String thePath = row.getString("path");
 
-            Toast.makeText(myContext,theWord + theCat + thePath +" "+ i,Toast.LENGTH_LONG).show();
+            Entry tempEntry = new Entry(theWord, theCat, thePath);
+
+            //Toast.makeText(myContext,fakeWord + fakeCat + fakePath,Toast.LENGTH_LONG).show();
+
+            dictionaryOfEntries.add(tempEntry);
+
+            //Entry fakeEntry = dictionaryOfEntries.get(i);
+
+            //Toast.makeText(myContext,fakeEntry.word + fakeEntry.category + fakeEntry.path + i, Toast.LENGTH_LONG).show();
 
         }
 
@@ -91,12 +106,17 @@ public class Dictionary implements DictionaryInterface{
 
     }
 
-    private void createEntry() {//creates an entry object
+    public int lengthOfDictionaryOfEntries(){
+        int x = dictionaryOfEntries.size();
+        return x;
 
     }
 
-    private void putEntry() {//passes an entry into the dictionary
+    public Entry getEntryNumber(int x){
+        Entry fetchedEntry = new Entry();
+        fetchedEntry = dictionaryOfEntries.get(x);
 
+        return fetchedEntry;
     }
 
     @Override

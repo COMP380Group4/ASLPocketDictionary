@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -36,7 +38,12 @@ public class SearchByWord extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.activity_search_by_word);
 
         // Listview Data
-        Backend theBigDatabase = new Backend();//run it to create a backend object to use everywhere.
+        Backend theBigDatabase = null;//run it to create a backend object to use everywhere.
+        try {
+            theBigDatabase = new Backend(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         Bundle extras = getIntent().getExtras();//get some info if anything is passed
         if(extras != null) {//makes sure we're not operating on anything null. This also prevents the bottom code from running if it isn't being requested by searchbycategory

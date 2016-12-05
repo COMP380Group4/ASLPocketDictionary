@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 /**
  * Created by Andrew on 4/24/2015.
  */
@@ -25,7 +27,12 @@ public class DisplaySign extends Activity{
         Intent myNewIntent = getIntent();//creates a new intent
         String myNewString = myNewIntent.getStringExtra("myUniqueId");//gets the string from SearchByWord under the "myUniqueId" id
 
-        Backend tbd= new Backend();
+        Backend tbd= null;
+        try {
+            tbd = new Backend(getApplicationContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         int numberData= tbd.getAPosition(myNewString);//gets the position of the string based on a method in the Backend class
 
         /*We have to use getAPosition rather than just passing the position from ItemClickListener because
